@@ -6,6 +6,6 @@ import jakarta.validation.constraints.NotNull;
 
 public record CategoryRequest(
         @NotBlank String name,
-        @NotNull TransactionType type
+        @NotNull TransactionType transactionType
         ) {
 }

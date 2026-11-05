@@ -5,6 +5,6 @@ import com.financial.control.models.enums.TransactionType;
 public record CategoryResponse(
         Long id,
         String name,
-        TransactionType type
+        TransactionType transactionType
 ) {
 }

@@ -17,7 +17,7 @@ public class CategoryService {
     private final CategoryRepository categoryRepository;
 
     public CategoryResponse createCategory(CategoryRequest dto) {
-        if (dto.type() == TransactionType.INVESTMENT) {
+        if (dto.transactionType() == TransactionType.INVESTMENT) {
             throw new InvalidCategoryException("A category must be EXPENSE or INCOME");
         }
 
@@ -27,7 +27,7 @@ public class CategoryService {
 
         Category newCategory = new Category();
         newCategory.setName(dto.name());
-        newCategory.setTransactionType(dto.type());
+        newCategory.setTransactionType(dto.transactionType());
 
         Category saved = categoryRepository.save(newCategory);
         return new CategoryResponse(saved.getId(), saved.getName(),saved.getTransactionType());
