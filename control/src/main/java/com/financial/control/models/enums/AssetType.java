@@ -4,5 +4,5 @@ public enum AssetType {
     ETF,
     FII,
     STOCK,
-    FIXED,INCOME
+    FIXED_INCOME
 }

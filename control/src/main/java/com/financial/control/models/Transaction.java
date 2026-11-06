@@ -18,19 +18,19 @@ public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false, precision = 19, scale = 2)
     private BigDecimal amount;
 
     @Column(nullable = false)
-    private LocalDate TransactionDate;
+    private LocalDate transactionDate;
 
     private String description;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable =false)
-    private TransactionType TransactionType;
+    private TransactionType transactionType;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
