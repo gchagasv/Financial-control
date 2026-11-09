@@ -22,6 +22,11 @@ public ResponseEntity<Object> handleDuplicateCategory(CategoryAlreadyExistsExcep
     return buildResponseEntity(ex.getMessage(), HttpStatus.CONFLICT);
 }
 
+@ExceptionHandler
+public ResponseEntity<Object> handleCategoryNotFound(CategoryNotFoundException ex) {
+    return buildResponseEntity(ex.getMessage(), HttpStatus.NOT_FOUND);
+}
+
 
     private ResponseEntity<Object> buildResponseEntity(String message, HttpStatus status) {
        Map<String,Object> map = new HashMap<>();
