@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record CategoryRequest(
-        @NotBlank String name,
-        @NotNull TransactionType transactionType
+        @NotBlank(message = "is required") String name,
+        @NotNull(message = "is required") TransactionType transactionType
         ) {
 }
