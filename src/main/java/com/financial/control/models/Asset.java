@@ -20,7 +20,7 @@ public class Asset {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String ticker;
 
     @Enumerated(EnumType.STRING)

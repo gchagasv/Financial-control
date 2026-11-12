@@ -29,6 +29,16 @@ public ResponseEntity<Object> handleCategoryNotFound(CategoryNotFoundException e
     return buildResponseEntity(ex.getMessage(), HttpStatus.NOT_FOUND);
 }
 
+@ExceptionHandler
+public ResponseEntity<Object> handleTickerNotFound(TickerNotFoundException ex) {
+    return buildResponseEntity(ex.getMessage(), HttpStatus.NOT_FOUND);
+}
+
+@ExceptionHandler
+public ResponseEntity<Object> handleBrapiConnection(MarketDataUnavailableException ex) {
+    return buildResponseEntity(ex.getMessage(), HttpStatus.BAD_GATEWAY);
+}
+
     @ExceptionHandler
     public ResponseEntity<Object> handleValidation(MethodArgumentNotValidException ex) {
         String message = ex.getBindingResult().getFieldErrors().stream()
